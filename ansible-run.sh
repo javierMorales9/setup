@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-## Install ansible
+## Reinstall ansible in case is not installed
 
-sudo apt-add-repository -y ppa:/ansible/ansible
 sudo apt-get update -y
 sudo apt-get install -y curl software-properties-common ansible
 
-sudo ansible-pull -U https://github.com/javierMorales9/setup.git
+ansible-playbook run.yaml --ask-become-pass --ask-vault-pass

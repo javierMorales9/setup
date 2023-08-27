@@ -18,6 +18,6 @@ cd setup
 ```
 This will install ansible and pull this repository. Then to install it all execute
 ```bash
-ansible-playbook local.yaml --ask-become-pass --ask-vault-pass
+ansible-playbook run.yaml --ask-become-pass --ask-vault-pass
 ```
 

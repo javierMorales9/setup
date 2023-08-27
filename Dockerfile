@@ -11,13 +11,13 @@ RUN apt-get update && \
     apt-get autoremove --yes
 
 FROM base AS prime
-ARG TAGS
-#RUN addgroup --gid 1000 theprimeagen
-#RUN adduser --gecos theprimeagen --uid 1000 --gid 1000 --disabled-password theprimeagen
-#USER theprimeagen
-#WORKDIR /home/theprimeagen
+#ARG TAGS
+RUN addgroup --gid 1000 javi
+RUN adduser --gecos javi --uid 1000 --gid 1000 --disabled-password javi
+USER javi
+WORKDIR /home/javi
 
-FROM prime
-COPY . .
-CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"]
+#FROM prime
+#COPY . .
+#CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"]
 
