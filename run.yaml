@@ -1,8 +1,8 @@
 - hosts: localhost
   vars:
     source_key: "./.ssh/id_rsa"
-    home: "{{ lookup('env', 'HOME') }}"
-    user: "{{ lookup('env', 'USER') }}"
+    #user: "{{ lookup('env', 'USER') }}"
+    home: "/home/{{ user }}"
     dest_key: "{{ home }}/.ssh/id_rsa"
     personal: "{{ home }}/personal"
   pre_tasks:
