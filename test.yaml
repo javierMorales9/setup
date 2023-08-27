@@ -6,14 +6,6 @@
     dest_key: "{{ home }}/.ssh/id_rsa"
     personal: "{{ home }}/personal"
   pre_tasks:
-    - name: log the personal directory
-      shell: "echo {{ personal }}"
-    - name: log the user
-      shell: "echo {{ user }}"
-    - name: log dest_key
-      shell: "echo {{ user }}"
-    - name: log personal
-      shell: "echo {{ personal }}"
     - name: Update Apt
       become: true
       apt:
@@ -23,3 +15,17 @@
       tags:
         - install
         - core
+
+  tasks:
+    - import_tasks: tasks/core-setup.yaml
+    - import_tasks: tasks/terminal.yaml
+    - import_tasks: tasks/zsh.yaml
+    - import_tasks: tasks/dotfiles.yaml
+    - import_tasks: tasks/git-setup.yaml
+    - import_tasks: tasks/lsp.yaml
+    - import_tasks: tasks/node.yaml
+    - import_tasks: tasks/npm.yaml
+    - import_tasks: tasks/debugger.yaml
+    - import_tasks: tasks/nvim.yaml
+    - import_tasks: tasks/ssh.yaml
+
