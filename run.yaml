@@ -6,6 +6,8 @@
     dest_key: "{{ home }}/.ssh/id_rsa"
     personal: "{{ home }}/personal"
   pre_tasks:
+    - name: log the user
+      shell: "echo {{ user }} {{ home }}"
     - name: Update Apt
       become: true
       apt:
