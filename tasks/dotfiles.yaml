@@ -5,7 +5,7 @@
     - dotfiles
     - stow
 - name: Cloning .dotfiles
-  shell: "git clone https://github.com/javierMorales9/.dotfiles {{ lookup('env', 'HOME') }}/.dotfiles"
+  shell: "git clone https://github.com/javierMorales9/.dotfiles {{ home }}/.dotfiles"
   tags:
     - install
     - dotfiles
