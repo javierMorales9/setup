@@ -1,0 +1,31 @@
+- name: Install github cli
+  apt:
+    name: 'gh'
+- name: Git personal setup email
+  git_config:
+    name: user.email
+    scope: global
+    value: "javiermoralesdevera9@gmail.com"
+  tags:
+    - git-personal
+- name: Git personal setup username
+  git_config:
+    name: user.email
+    scope: global
+    value: "Javier Morales de Vera"
+  tags:
+    - git-personal
+- name: Git trackey setup email
+  git_config:
+    name: user.email
+    scope: global
+    value: "javi@clickout.io"
+  tags:
+    - git-personal
+- name: Git personal trackey username
+  git_config:
+    name: user.email
+    scope: global
+    value: "Javier Morales de Vera"
+  tags:
+    - git-personal

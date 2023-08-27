@@ -1,0 +1,5 @@
+- name: install tmux
+  apt:
+    name: ['tmux', 'fzf', 'xclip', 'tldr', 'ripgrep']
+  tags:
+    - terminal

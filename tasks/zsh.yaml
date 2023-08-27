@@ -1,0 +1,24 @@
+- name: Install zsh
+  apt: name=zsh
+  tags: &tags_for_zsh ['install', 'productivity', 'dotfiles', 'zsh']
+
+- name: Chage shell
+  shell: chsh -s `which zsh`
+  tags: *tags_for_zsh
+
+- name: Install Oh my Zsh
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  tags: *tags_for_zsh
+  when: oh_my_stats.stat.exists == False
+
+- name: Install plugin for autosuggestions
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: "~/.oh-my-zsh/plugins/zsh-autosuggestions"
+  tags: *tags_for_zsh
+
+- name: Install the fzf thing:
+  ansible.builtin.git:
+    repo: 'https://github.com/zsh-users/zsh-autosuggestions.git'
+    dest: "~/.oh-my-zsh/plugins/zsh-fzf-history-search"
+  tags: *tags_for_zsh
