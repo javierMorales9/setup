@@ -3,11 +3,9 @@
     source_key: "./.ssh/id_rsa"
     home: "{{ lookup('env', 'HOME') }}"
     user: "{{ lookup('env', 'USER') }}"
-    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
-    personal: "{{ lookup('env', 'HOME') }}/personal"
+    dest_key: "{{ home }}/.ssh/id_rsa"
+    personal: "{{ home }}/personal"
   pre_tasks:
-    - name: log the personal directory
-      shell: "echo {{ personal }}"
     - name: Update Apt
       become: true
       apt:

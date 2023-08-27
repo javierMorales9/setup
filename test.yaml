@@ -15,7 +15,6 @@
       tags:
         - install
         - core
-
   tasks:
     - import_tasks: tasks/core-setup.yaml
     - import_tasks: tasks/terminal.yaml
