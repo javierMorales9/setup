@@ -5,4 +5,4 @@
 sudo apt-get update -y
 sudo apt-get install -y curl software-properties-common ansible
 
-ansible-playbook run.yaml --ask-become-pass --ask-vault-pass
+sudo ansible-playbook run.yaml --ask-become-pass --ask-vault-pass
