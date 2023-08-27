@@ -1,8 +1,5 @@
 - name: Setup sumneko lua lsp
-  ansible.builtin.git:
-    repo: "git@github.com:sumneko/lua-language-server.git"
-    recursive: yes
-    dest: "{{ personal }}/sumneko"
+  shell: "git clone --recurse-submodules -j8 https://github.com/sumneko/lua-language-server {{ personal }}/sumneko"
   tags:
     - install
     - lsp
