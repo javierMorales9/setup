@@ -9,7 +9,7 @@
 - name: Install Oh my Zsh
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   tags: *tags_for_zsh
-  when: ~/.oh_my_zsh.stat.exists == False
+  #when: ~/.oh_my_zsh.stat.exists == False
 
 - name: Install plugin for autosuggestions
   ansible.builtin.git:
