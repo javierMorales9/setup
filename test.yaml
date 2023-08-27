@@ -1,15 +1,19 @@
 - hosts: localhost
   vars:
     source_key: "./.ssh/id_rsa"
-    home: "{{ lookup('env', 'HOME') }}"
-    user: "{{ lookup('env', 'USER') }}"
-    dest_key: "{{ lookup('env', 'HOME') }}/.ssh/id_rsa"
-    personal: "{{ lookup('env', 'HOME') }}/personal"
+    home: "/home/javi"
+    user: "javi"
+    dest_key: "{{ home }}/.ssh/id_rsa"
+    personal: "{{ home }}/personal"
   pre_tasks:
     - name: log the personal directory
       shell: "echo {{ personal }}"
     - name: log the user
       shell: "echo {{ user }}"
+    - name: log dest_key
+      shell: "echo {{ user }}"
+    - name: log personal
+      shell: "echo {{ personal }}"
     - name: Update Apt
       become: true
       apt:
