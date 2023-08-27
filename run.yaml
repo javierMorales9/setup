@@ -7,7 +7,7 @@
     personal: "{{ home }}/personal"
   pre_tasks:
     - name: set up the $HOME env var
-      shell: "HOME={{ home }}"
+      shell: "export HOME={{ home }}"
     - name: log the user
       shell: "echo {{ user }} {{ home }}"
     - name: Update Apt
