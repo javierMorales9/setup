@@ -6,10 +6,10 @@
     dest_key: "{{ home }}/.ssh/id_rsa"
     personal: "{{ home }}/personal"
   pre_tasks:
-    - name: set up the $HOME env var
-      shell: "export HOME={{ home }}"
+    - name: set up the $DOTFILES env var
+      shell: "export DOTFILES={{ home }}/.dotfiles"
     - name: log the user
-      shell: "echo {{ user }} {{ home }}"
+      shell: "echo {{ user }} {{ home }} {{lookup('env', 'DOTFILES')}}"
     - name: Update Apt
       become: true
       apt:
