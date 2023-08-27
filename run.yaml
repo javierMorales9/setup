@@ -15,14 +15,14 @@
         - core
   tasks:
     - import_tasks: tasks/core-setup.yaml
-    - import_tasks: tasks/debugger.yaml
+    - import_tasks: tasks/terminal.yaml
+    - import_tasks: tasks/zsh.yaml
     - import_tasks: tasks/dotfiles.yaml
     - import_tasks: tasks/git-setup.yaml
     - import_tasks: tasks/lsp.yaml
     - import_tasks: tasks/node.yaml
     - import_tasks: tasks/npm.yaml
+    - import_tasks: tasks/debugger.yaml
     - import_tasks: tasks/nvim.yaml
     - import_tasks: tasks/ssh.yaml
-    - import_tasks: tasks/terminal.yaml
-    - import_tasks: tasks/zsh.yaml
 
