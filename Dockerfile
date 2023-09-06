@@ -10,14 +10,9 @@ RUN apt-get update && \
     apt-get install -y curl git ansible build-essential && \
     apt-get clean autoclean && \
     apt-get autoremove --yes
-
-FROM base AS prime
 RUN useradd -m javi && echo "javi:javi" | chpasswd && adduser javi sudo
 USER javi
-COPY . .
 WORKDIR /home/javi/setup
-
-#FROM prime
-#COPY . .
-#CMD ["sh", "-c", "ansible-playbook $TAGS local.yml"]
+COPY . .
+RUN ./ansible-run.sh
 
