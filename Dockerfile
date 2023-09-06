@@ -14,5 +14,3 @@ RUN useradd -m javi && echo "javi:javi" | chpasswd && adduser javi sudo
 USER javi
 WORKDIR /home/javi/setup
 COPY . .
-RUN ./ansible-run.sh
-
