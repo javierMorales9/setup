@@ -12,12 +12,10 @@ RUN apt-get update && \
     apt-get autoremove --yes
 
 FROM base AS prime
-#ARG TAGS
-#RUN addgroup --gid 1000 javi
-#RUN adduser --gecos javi --uid 1000 --gid 1000 --disabled-password javi
 RUN useradd -m javi && echo "javi:javi" | chpasswd && adduser javi sudo
 USER javi
-WORKDIR /home/javi
+COPY . .
+WORKDIR /home/javi/setup
 
 #FROM prime
 #COPY . .
